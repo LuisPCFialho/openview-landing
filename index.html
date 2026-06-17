@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="pt">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OpenView IPTV — o teu player para Android TV, telemóvel e Fire TV</title>
+  <meta name="description" content="OpenView IPTV: player rápido e elegante para Android TV, telemóvel e Fire TV. Suporta M3U e Xtream, guia EPG, gravações, lembretes e 10 idiomas. Traz a tua própria lista.">
+  <meta name="theme-color" content="#0f1115">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="OpenView IPTV">
+  <meta property="og:description" content="Player IPTV rápido e elegante para Android TV, telemóvel e Fire TV. Traz a tua própria lista (M3U / Xtream).">
+  <meta property="og:image" content="favicon.svg">
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Fundo aurora animado -->
+  <div class="aurora" aria-hidden="true">
+    <span class="blob b1"></span>
+    <span class="blob b2"></span>
+    <span class="blob b3"></span>
+  </div>
+  <div class="grid-overlay" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a class="brand" href="#top">
+      <svg class="logo" viewBox="0 0 64 64" width="32" height="32" aria-hidden="true">
+        <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#5b8cff"/><stop offset="1" stop-color="#9b6bff"/>
+        </linearGradient></defs>
+        <rect width="64" height="64" rx="16" fill="url(#lg)"/>
+        <path d="M26 20 L46 32 L26 44 Z" fill="#fff"/>
+      </svg>
+      <span>OpenView<span class="accent">IPTV</span></span>
+    </a>
+    <nav class="nav-links">
+      <a href="#features">Funcionalidades</a>
+      <a href="#install">Como instalar</a>
+      <a class="gh" href="https://github.com/LuisPCFialho/openview-releases/releases/latest" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-copy reveal">
+        <span class="badge"><span class="dot"></span> <span id="version">A nova versão já saiu</span></span>
+        <h1>O teu IPTV,<br><span class="grad">finalmente bonito.</span></h1>
+        <p class="lead">
+          Um player rápido e elegante para <strong>Android TV</strong>, <strong>telemóvel</strong>
+          e <strong>Fire TV</strong>. Traz a tua própria lista — M3U ou Xtream — e vê tudo
+          com guia de programação, gravações e lembretes.
+        </p>
+        <div class="cta">
+          <a id="download" class="btn-download" href="https://github.com/LuisPCFialho/openview-releases/releases/latest/download/app-release.apk">
+            <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
+              <path fill="currentColor" d="M12 3v10.6l3.3-3.3 1.4 1.4L12 17.4l-4.7-5.7 1.4-1.4L12 13.6V3h0zM5 19h14v2H5z"/>
+            </svg>
+            <span class="btn-text">
+              <strong>Descarregar APK</strong>
+              <small id="dl-sub">grátis · Android TV &amp; telemóvel</small>
+            </span>
+          </a>
+          <a class="btn-ghost" href="https://github.com/LuisPCFialho/openview-releases/releases/latest" target="_blank" rel="noopener">Notas da versão</a>
+        </div>
+        <p class="micro">Android 8.0+ · instalação por APK (fora da Play Store)</p>
+      </div>
+
+      <div class="hero-art reveal" aria-hidden="true">
+        <div class="screen tilt">
+          <div class="screen-glow"></div>
+          <div class="screen-bar">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="screen-body">
+            <div class="play"><svg viewBox="0 0 24 24" width="42" height="42"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></div>
+            <div class="tiles">
+              <i style="--d:.0s"></i><i style="--d:.1s"></i><i style="--d:.2s"></i>
+              <i style="--d:.15s"></i><i style="--d:.25s"></i><i style="--d:.35s"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="features">
+      <h2 class="reveal">Tudo o que precisas, num só player</h2>
+      <div class="cards">
+        <article class="card reveal">
+          <div class="ic">📺</div>
+          <h3>M3U &amp; Xtream</h3>
+          <p>Adiciona qualquer lista por URL M3U ou conta Xtream Codes. Várias fontes ao mesmo tempo (premium).</p>
+        </article>
+        <article class="card reveal">
+          <div class="ic">🗓️</div>
+          <h3>Guia EPG</h3>
+          <p>Programação completa com o que está a dar agora e a seguir, organizada por canal.</p>
+        </article>
+        <article class="card reveal">
+          <div class="ic">⏺️</div>
+          <h3>Gravações &amp; lembretes</h3>
+          <p>Grava programas e recebe lembretes para não perderes nada (premium).</p>
+        </article>
+        <article class="card reveal">
+          <div class="ic">🌍</div>
+          <h3>10 idiomas</h3>
+          <p>Interface em português, inglês, espanhol, francês, alemão, italiano, russo, japonês, chinês e árabe.</p>
+        </article>
+        <article class="card reveal">
+          <div class="ic">📱</div>
+          <h3>TV, telemóvel &amp; Fire TV</h3>
+          <p>Pensado primeiro para a TV — navegação por comando — mas perfeito também no telemóvel.</p>
+        </article>
+        <article class="card reveal">
+          <div class="ic">💾</div>
+          <h3>Backup &amp; restauro</h3>
+          <p>Exporta e importa toda a tua configuração num clique, sempre que mudares de aparelho (premium).</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- INSTALL -->
+    <section id="install" class="install">
+      <h2 class="reveal">Instalar é rápido</h2>
+      <div class="steps">
+        <div class="step reveal"><span class="n">1</span><div><h3>Descarrega o APK</h3><p>Carrega no botão de download. O ficheiro fica no teu aparelho.</p></div></div>
+        <div class="step reveal"><span class="n">2</span><div><h3>Permite a instalação</h3><p>Na TV/telemóvel, autoriza "instalar apps desconhecidas" para o teu navegador ou gestor de ficheiros.</p></div></div>
+        <div class="step reveal"><span class="n">3</span><div><h3>Abre e adiciona a tua lista</h3><p>Mete o teu URL M3U ou conta Xtream e está pronto a ver.</p></div></div>
+      </div>
+      <div class="tv-tip reveal">
+        <strong>Na Android TV / Fire TV?</strong> Usa a app <em>Downloader</em> e cola o link do download — instala diretamente no ecrã grande.
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="final reveal">
+      <h2>Pronto para começar?</h2>
+      <p>Descarrega o OpenView IPTV e traz a tua própria lista.</p>
+      <a class="btn-download big" href="https://github.com/LuisPCFialho/openview-releases/releases/latest/download/app-release.apk">
+        <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
+          <path fill="currentColor" d="M12 3v10.6l3.3-3.3 1.4 1.4L12 17.4l-4.7-5.7 1.4-1.4L12 13.6V3h0zM5 19h14v2H5z"/>
+        </svg>
+        <span class="btn-text"><strong>Descarregar APK</strong><small>última versão</small></span>
+      </a>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>OpenView IPTV — player de conteúdo fornecido pelo utilizador. Não disponibiliza nem aloja canais.</p>
+    <p class="dim">© <span id="year">2026</span> OpenView · <a href="https://github.com/LuisPCFialho/openview-releases" target="_blank" rel="noopener">GitHub</a></p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
