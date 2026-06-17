@@ -20,13 +20,21 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <!-- Fundo aurora animado -->
+  <!-- progresso de scroll -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <!-- spotlight do cursor -->
+  <div class="spotlight" aria-hidden="true"></div>
+
+  <!-- fundos: aurora + canvas de partículas + ruído -->
   <div class="aurora" aria-hidden="true">
     <span class="blob b1"></span>
     <span class="blob b2"></span>
     <span class="blob b3"></span>
   </div>
+  <canvas id="net" class="net" aria-hidden="true"></canvas>
   <div class="grid-overlay" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
 
   <header class="nav">
     <a class="brand" href="#top">
@@ -51,14 +59,23 @@
     <section class="hero">
       <div class="hero-copy reveal">
         <span class="badge"><span class="dot"></span> <span id="version">A nova versão já saiu</span></span>
-        <h1>O teu IPTV,<br><span class="grad">finalmente bonito.</span></h1>
+        <h1>
+          O teu IPTV em
+          <span class="rotator" aria-hidden="true">
+            <span class="rot-track">
+              <b>Android TV</b><b>telemóvel</b><b>Fire TV</b><b>tablet</b>
+            </span>
+          </span>
+          <br><span class="grad shine">finalmente bonito.</span>
+        </h1>
         <p class="lead">
-          Um player rápido e elegante para <strong>Android TV</strong>, <strong>telemóvel</strong>
-          e <strong>Fire TV</strong>. Traz a tua própria lista — M3U ou Xtream — e vê tudo
-          com guia de programação, gravações e lembretes.
+          Um player rápido e elegante para <strong>todos os ecrãs</strong>.
+          Traz a tua própria lista — M3U ou Xtream — e vê tudo com guia de
+          programação, gravações e lembretes.
         </p>
         <div class="cta">
-          <a id="download" class="btn-download" href="https://github.com/LuisPCFialho/openview-releases/releases/latest/download/app-release.apk">
+          <a id="download" class="btn-download magnetic" href="https://github.com/LuisPCFialho/openview-releases/releases/latest/download/app-release.apk">
+            <span class="bd-shine" aria-hidden="true"></span>
             <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
               <path fill="currentColor" d="M12 3v10.6l3.3-3.3 1.4 1.4L12 17.4l-4.7-5.7 1.4-1.4L12 13.6V3h0zM5 19h14v2H5z"/>
             </svg>
@@ -69,16 +86,22 @@
           </a>
           <a class="btn-ghost" href="https://github.com/LuisPCFialho/openview-releases/releases/latest" target="_blank" rel="noopener">Notas da versão</a>
         </div>
+
+        <div class="stats reveal">
+          <div class="stat"><b class="count" data-to="10">0</b><span>idiomas</span></div>
+          <div class="stat"><b class="count" data-to="4">0</b><span>plataformas</span></div>
+          <div class="stat"><b class="count" data-to="100" data-suffix="%">0</b><span>a tua lista</span></div>
+        </div>
         <p class="micro">Android 8.0+ · instalação por APK (fora da Play Store)</p>
       </div>
 
       <div class="hero-art reveal" aria-hidden="true">
-        <div class="screen tilt">
+        <div class="screen tilt" id="tilt">
           <div class="screen-glow"></div>
           <div class="screen-bar">
             <span></span><span></span><span></span>
           </div>
-          <div class="screen-body">
+          <div class="screen-body" style="--z:40px">
             <div class="play"><svg viewBox="0 0 24 24" width="42" height="42"><path fill="currentColor" d="M8 5v14l11-7z"/></svg></div>
             <div class="tiles">
               <i style="--d:.0s"></i><i style="--d:.1s"></i><i style="--d:.2s"></i>
@@ -89,36 +112,50 @@
       </div>
     </section>
 
+    <!-- MARQUEE -->
+    <div class="marquee reveal" aria-hidden="true">
+      <div class="mq-track">
+        <span>M3U</span><span>•</span><span>Xtream Codes</span><span>•</span><span>EPG</span><span>•</span>
+        <span>Gravações</span><span>•</span><span>Lembretes</span><span>•</span><span>Android TV</span><span>•</span>
+        <span>Fire TV</span><span>•</span><span>Telemóvel</span><span>•</span><span>Backup</span><span>•</span>
+        <span>10 idiomas</span><span>•</span>
+        <span>M3U</span><span>•</span><span>Xtream Codes</span><span>•</span><span>EPG</span><span>•</span>
+        <span>Gravações</span><span>•</span><span>Lembretes</span><span>•</span><span>Android TV</span><span>•</span>
+        <span>Fire TV</span><span>•</span><span>Telemóvel</span><span>•</span><span>Backup</span><span>•</span>
+        <span>10 idiomas</span><span>•</span>
+      </div>
+    </div>
+
     <!-- FEATURES -->
     <section id="features" class="features">
       <h2 class="reveal">Tudo o que precisas, num só player</h2>
       <div class="cards">
-        <article class="card reveal">
+        <article class="card spot reveal">
           <div class="ic">📺</div>
           <h3>M3U &amp; Xtream</h3>
           <p>Adiciona qualquer lista por URL M3U ou conta Xtream Codes. Várias fontes ao mesmo tempo (premium).</p>
         </article>
-        <article class="card reveal">
+        <article class="card spot reveal">
           <div class="ic">🗓️</div>
           <h3>Guia EPG</h3>
           <p>Programação completa com o que está a dar agora e a seguir, organizada por canal.</p>
         </article>
-        <article class="card reveal">
+        <article class="card spot reveal">
           <div class="ic">⏺️</div>
           <h3>Gravações &amp; lembretes</h3>
           <p>Grava programas e recebe lembretes para não perderes nada (premium).</p>
         </article>
-        <article class="card reveal">
+        <article class="card spot reveal">
           <div class="ic">🌍</div>
           <h3>10 idiomas</h3>
           <p>Interface em português, inglês, espanhol, francês, alemão, italiano, russo, japonês, chinês e árabe.</p>
         </article>
-        <article class="card reveal">
+        <article class="card spot reveal">
           <div class="ic">📱</div>
           <h3>TV, telemóvel &amp; Fire TV</h3>
           <p>Pensado primeiro para a TV — navegação por comando — mas perfeito também no telemóvel.</p>
         </article>
-        <article class="card reveal">
+        <article class="card spot reveal">
           <div class="ic">💾</div>
           <h3>Backup &amp; restauro</h3>
           <p>Exporta e importa toda a tua configuração num clique, sempre que mudares de aparelho (premium).</p>
@@ -141,9 +178,11 @@
 
     <!-- CTA FINAL -->
     <section class="final reveal">
+      <div class="final-glow" aria-hidden="true"></div>
       <h2>Pronto para começar?</h2>
       <p>Descarrega o OpenView IPTV e traz a tua própria lista.</p>
-      <a class="btn-download big" href="https://github.com/LuisPCFialho/openview-releases/releases/latest/download/app-release.apk">
+      <a class="btn-download big magnetic" href="https://github.com/LuisPCFialho/openview-releases/releases/latest/download/app-release.apk">
+        <span class="bd-shine" aria-hidden="true"></span>
         <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
           <path fill="currentColor" d="M12 3v10.6l3.3-3.3 1.4 1.4L12 17.4l-4.7-5.7 1.4-1.4L12 13.6V3h0zM5 19h14v2H5z"/>
         </svg>
