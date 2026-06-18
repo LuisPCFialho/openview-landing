@@ -1,6 +1,18 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "cleanUrls": true,
+  "redirects": [
+    {
+      "source": "/apk",
+      "destination": "https://github.com/LuisPCFialho/openview-releases/releases/latest/download/app-release.apk",
+      "permanent": false
+    },
+    {
+      "source": "/tv",
+      "destination": "https://github.com/LuisPCFialho/openview-releases/releases/latest/download/app-release.apk",
+      "permanent": false
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
