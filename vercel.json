@@ -4,12 +4,12 @@
   "redirects": [
     {
       "source": "/apk",
-      "destination": "https://github.com/LuisPCFialho/openview-releases/releases/latest/download/app-release.apk",
+      "destination": "https://github.com/LuisPCFialho/openview-releases/releases/latest/download/OpenViewIPTV.apk",
       "permanent": false
     },
     {
       "source": "/tv",
-      "destination": "https://github.com/LuisPCFialho/openview-releases/releases/latest/download/app-release.apk",
+      "destination": "https://github.com/LuisPCFialho/openview-releases/releases/latest/download/OpenViewIPTV.apk",
       "permanent": false
     }
   ],

@@ -190,7 +190,7 @@
   /* ---------- versão + asset via API do GitHub ---------- */
   (function () {
     var REPO = 'LuisPCFialho/openview-releases';
-    var FALLBACK = 'https://github.com/' + REPO + '/releases/latest/download/app-release.apk';
+    var FALLBACK = 'https://github.com/' + REPO + '/releases/latest/download/OpenViewIPTV.apk';
     fetch('https://api.github.com/repos/' + REPO + '/releases/latest', {
       headers: { 'Accept': 'application/vnd.github+json' }
     })
