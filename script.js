@@ -1,6 +1,10 @@
 (function () {
   'use strict';
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // "lite" (TV / hardware fraco / reduced-motion) reusa o gate reduce: desliga
+  // canvas de partículas, spotlight, tilt 3D e botões magnéticos. Classe posta no
+  // <head> antes do CSS (ver index.html).
+  var lite = document.documentElement.classList.contains('lite');
+  var reduce = lite || (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
 
   /* ---------- reveal ao scroll (com stagger) ---------- */
   (function () {

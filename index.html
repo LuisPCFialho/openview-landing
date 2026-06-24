@@ -17,6 +17,24 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <!-- Modo LITE: TVs (browsers fracos) e hardware fraco ficam lentíssimos com
+       canvas de partículas, blur(110px) e animações infinitas. Detetamos cedo e
+       marcamos <html class="lite"> ANTES do CSS, para cortar esses efeitos. -->
+  <script>
+    (function () {
+      try {
+        var ua = navigator.userAgent || '';
+        var tv = /SMART-?TV|SmartTV|Tizen|Web ?0?S|WebOS|NetCast|BRAVIA|AFT[A-Z]|AppleTV|GoogleTV|HbbTV|VIDAA|Roku|DTV|Maple|Viera|NETTV|InettvBrowser|CrKey|DLNADOC/i.test(ua);
+        var lowHw = (navigator.hardwareConcurrency || 8) <= 2 || (navigator.deviceMemory || 4) <= 2;
+        var mm = window.matchMedia || function () { return { matches: false }; };
+        var noHover = mm('(hover: none)').matches && !('ontouchstart' in window);
+        var reduce = mm('(prefers-reduced-motion: reduce)').matches;
+        if (tv || lowHw || noHover || reduce) {
+          document.documentElement.classList.add('lite');
+        }
+      } catch (e) {}
+    })();
+  </script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>

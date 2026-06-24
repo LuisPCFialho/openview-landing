@@ -246,3 +246,48 @@ main,.nav{position:relative;z-index:2}
   .reveal{opacity:1;transform:none;transition:none}
   .scroll-progress,.spotlight,.net{display:none}
 }
+
+/* ---------- Modo LITE (TVs / hardware fraco) ----------
+   Browsers de TV engasgam com o canvas de partículas, filter:blur(110px),
+   backdrop-filter e ~8 animações infinitas. Em lite cortamos tudo isso e o site
+   fica fluido, mantendo o layout e o conteúdo. Classe posta no <head> antes do CSS. */
+.lite .blob,
+.lite .net,
+.lite #net,
+.lite .grid-overlay,
+.lite .spotlight,
+.lite .scroll-progress{display:none!important}
+
+.lite *,
+.lite *::before,
+.lite *::after{
+  animation:none!important;
+  transition:none!important;
+  filter:none!important;
+  -webkit-backdrop-filter:none!important;
+  backdrop-filter:none!important;
+  mix-blend-mode:normal!important;
+  will-change:auto!important;
+}
+
+/* nav/badge sem blur translúcido -> fundo sólido legível */
+.lite .nav{background:rgba(15,17,21,.96)}
+
+/* título com gradiente animado -> cor sólida (legível e barato) */
+.lite .shine{
+  background:none!important;
+  -webkit-background-clip:initial!important;
+  background-clip:initial!important;
+  -webkit-text-fill-color:initial!important;
+  color:var(--blue)!important;
+}
+
+/* mockup sem 3D nem flutuação */
+.lite .screen{
+  transform:none!important;
+  transform-style:flat!important;
+  box-shadow:0 12px 30px rgba(0,0,0,.5);
+}
+
+/* conteúdo sempre visível, sem depender do reveal por scroll */
+.lite .reveal{opacity:1!important;transform:none!important}
