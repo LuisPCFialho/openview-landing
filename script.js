@@ -203,7 +203,7 @@
         if (!rel) return;
         if (rel.tag_name) {
           var v = document.getElementById('version');
-          if (v) v.textContent = 'Versão ' + rel.tag_name + ' disponível';
+          if (v) v.textContent = 'Version ' + rel.tag_name + ' available';
         }
         var apk = (rel.assets || []).filter(function (a) { return /\.apk$/i.test(a.name); })[0];
         var url = apk ? apk.browser_download_url : FALLBACK;
