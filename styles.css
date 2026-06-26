@@ -295,20 +295,23 @@ main,.nav{position:relative;z-index:2}
 /* ---------- TV/lite: hero compacto, sem arte decorativa, BOTÃO no topo ----------
    Numa TV o utilizador não deve ter de fazer scroll para descarregar. Escondemos
    o mockup decorativo, compactamos o hero e reordenamos a CTA para o topo. */
+.lite .nav{display:none}                 /* barra de navegação fora em TV (mais espaço) */
+.lite .marquee{display:none}             /* fila de tags fora em TV (sobe o botão) */
 .lite .hero{
   grid-template-columns:1fr;
   gap:14px;
-  padding:14px clamp(20px,5vw,64px) 28px;
+  padding:32px clamp(20px,5vw,64px) 28px;
   align-items:start;
 }
 .lite .hero-art{display:none}            /* mockup decorativo: fora em TV */
-.lite .hero-copy{display:flex;flex-direction:column}
-.lite .cta{order:-1;margin-bottom:6px}   /* botão de download primeiro, logo sob a nav */
+/* tudo centrado em TV (mais fácil de ler à distância) */
+.lite .hero-copy{display:flex;flex-direction:column;align-items:center;text-align:center}
+.lite .cta{order:-1;justify-content:center;width:100%;margin-bottom:10px}
 .lite .badge{order:0}
 .lite .hero h1{order:1;font-size:clamp(1.7rem,4.5vw,2.6rem);margin-bottom:.2em}
-.lite .lead{order:2;margin:0;max-width:none}
-.lite .stats{order:3;margin-top:14px}
+.lite .lead{order:2;margin:0;max-width:46ch}
+.lite .stats{order:3;justify-content:center;margin-top:14px}
 .lite .micro{order:4;margin-top:10px}
-/* botão maior e bem visível com foco do D-pad */
-.lite .btn-download{padding:18px 30px;font-size:1.05rem}
+/* botão grande e central, bem visível com o foco do D-pad */
+.lite .btn-download{padding:22px 46px;font-size:1.3rem}
 .lite .btn-ghost{display:none}           /* tira a ação secundária para simplificar em TV */
