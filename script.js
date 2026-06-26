@@ -211,4 +211,16 @@
       })
       .catch(function () { /* fica o link estático */ });
   })();
+
+  /* ---------- TV: foco inicial no botão de download (só carregar OK) ---------- */
+  if (lite) {
+    var focusDownload = function () {
+      var dl = document.getElementById('download');
+      if (!dl) return;
+      try { dl.focus({ preventScroll: true }); } catch (e) { try { dl.focus(); } catch (_) {} }
+    };
+    focusDownload();
+    // alguns browsers de TV repõem o foco depois do load — reforça uma vez.
+    window.addEventListener('load', function () { setTimeout(focusDownload, 60); });
+  }
 })();

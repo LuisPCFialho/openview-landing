@@ -314,4 +314,7 @@ main,.nav{position:relative;z-index:2}
 .lite .micro{order:4;margin-top:10px}
 /* botão grande e central, bem visível com o foco do D-pad */
 .lite .btn-download{padding:22px 46px;font-size:1.3rem}
+/* realce claro quando o foco está no botão (ao abrir já cá está — só carregar OK) */
+.lite .btn-download:focus,
+.lite .btn-download:focus-visible{outline:3px solid #fff;outline-offset:4px}
 .lite .btn-ghost{display:none}           /* tira a ação secundária para simplificar em TV */
