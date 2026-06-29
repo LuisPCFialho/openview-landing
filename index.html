@@ -11,9 +11,10 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="OpenView IPTV">
   <meta property="og:description" content="Fast, elegant IPTV player for Android TV, phone and Fire TV. Bring your own playlist (M3U / Xtream).">
-  <meta property="og:image" content="favicon.svg">
+  <meta property="og:image" content="logo.png">
 
-  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -56,13 +57,7 @@
 
   <header class="nav">
     <a class="brand" href="#top">
-      <svg class="logo" viewBox="0 0 64 64" width="32" height="32" aria-hidden="true">
-        <defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#5b8cff"/><stop offset="1" stop-color="#9b6bff"/>
-        </linearGradient></defs>
-        <rect width="64" height="64" rx="16" fill="url(#lg)"/>
-        <path d="M26 20 L46 32 L26 44 Z" fill="#fff"/>
-      </svg>
+      <img class="logo" src="logo.png" alt="" width="32" height="32">
       <span>OpenView<span class="accent">IPTV</span></span>
     </a>
     <nav class="nav-links">
@@ -76,6 +71,7 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero-copy reveal">
+        <img class="hero-logo" src="logo.png" alt="OpenView IPTV" width="112" height="112">
         <span class="badge"><span class="dot"></span> <span id="version">The new version is out</span></span>
         <h1>
           Your IPTV on
