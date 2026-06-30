@@ -127,7 +127,7 @@
       h = canvas.height = Math.floor(innerHeight * dpr);
       canvas.style.width = innerWidth + 'px';
       canvas.style.height = innerHeight + 'px';
-      var count = Math.min(90, Math.floor(innerWidth * innerHeight / 16000));
+      var count = Math.min(200, Math.floor(innerWidth * innerHeight / 9000));
       pts = [];
       for (var i = 0; i < count; i++) {
         pts.push({
@@ -142,10 +142,10 @@
     window.addEventListener('pointermove', function (e) { mouse.x = e.clientX * dpr; mouse.y = e.clientY * dpr; }, { passive: true });
     window.addEventListener('pointerleave', function () { mouse.x = mouse.y = -9999; });
 
-    var LINK = 130 * (dpr || 1);
+    var LINK = 150 * (dpr || 1);
     function frame() {
       ctx.clearRect(0, 0, w, h);
-      LINK = 130 * dpr;
+      LINK = 150 * dpr;
       for (var i = 0; i < pts.length; i++) {
         var p = pts[i];
         p.x += p.vx; p.y += p.vy;
