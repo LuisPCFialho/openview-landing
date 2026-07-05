@@ -168,10 +168,21 @@ main,.nav{position:relative;z-index:2}
   transition:transform .2s ease;animation:floaty 7s ease-in-out infinite}
 @keyframes floaty{0%,100%{translate:0 0}50%{translate:0 -12px}}
 .screen-glow{position:absolute;inset:0;background:radial-gradient(circle at 50% 40%,rgba(91,140,255,.25),transparent 60%)}
-.screen .shot{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block}
+/* contain (não cover) para se ver o ecrã da TV todo, sem cortar os cantos */
+.screen .shot{position:absolute;top:40px;left:12px;width:calc(100% - 24px);height:calc(100% - 54px);
+  object-fit:contain;object-position:center;display:block;border-radius:8px}
 .shot-shade{position:absolute;inset:0;pointer-events:none;background:
-  radial-gradient(circle at 50% 40%,rgba(8,10,18,.5),transparent 55%),
-  linear-gradient(180deg,rgba(8,10,18,.30),transparent 20%,transparent 76%,rgba(8,10,18,.34))}
+  radial-gradient(circle at 50% 42%,rgba(8,10,18,.42),transparent 58%),
+  linear-gradient(180deg,rgba(8,10,18,.22),transparent 18%,transparent 80%,rgba(8,10,18,.28))}
+
+/* Easter egg "BananaWare": chuva de bananas ao clicar no play (igual ao ecrã Sobre da app) */
+.banana-rain{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:80}
+.banana-rain b{position:absolute;top:0;line-height:1;will-change:transform;
+  animation:banana-fall linear var(--dur) var(--delay) infinite}
+@keyframes banana-fall{
+  from{transform:translateY(-16vh) rotate(var(--r))}
+  to{transform:translateY(116vh) rotate(var(--r))}
+}
 .screen-bar{position:relative;display:flex;gap:7px;padding:14px 16px;transform:translateZ(20px)}
 .screen-bar span{width:11px;height:11px;border-radius:50%;background:#2c3140}
 .screen-bar span:first-child{background:#ff5f56}.screen-bar span:nth-child(2){background:#ffbd2e}.screen-bar span:nth-child(3){background:#27c93f}

@@ -181,10 +181,33 @@
     requestAnimationFrame(frame);
   })();
 
-  /* ---------- ripple no play do mockup ---------- */
+  /* ---------- play do mockup: bounce + chuva de bananas (easter egg BananaWare) ---------- */
+  function bananaRain() {
+    var old = document.getElementById('banana-rain');
+    if (old) old.remove();
+    var layer = document.createElement('div');
+    layer.id = 'banana-rain';
+    layer.className = 'banana-rain';
+    layer.setAttribute('aria-hidden', 'true');
+    for (var i = 0; i < 40; i++) {
+      var b = document.createElement('b');
+      b.textContent = '🍌';
+      b.style.left = (Math.random() * 96) + 'vw';
+      b.style.fontSize = (24 + Math.random() * 32).toFixed(0) + 'px'; // 24-56px
+      b.style.setProperty('--dur', (2.5 + Math.random() * 2.5).toFixed(2) + 's'); // 2.5-5s
+      b.style.setProperty('--delay', (Math.random() * 2.5).toFixed(2) + 's'); // 0-2.5s
+      b.style.setProperty('--r', (Math.random() * 360).toFixed(0) + 'deg');
+      layer.appendChild(b);
+    }
+    document.body.appendChild(layer);
+    setTimeout(function () { layer.style.transition = 'opacity .6s ease'; layer.style.opacity = '0'; }, 6000);
+    setTimeout(function () { layer.remove(); }, 6700);
+  }
+
   var play = document.querySelector('.screen .play');
   if (play) play.addEventListener('click', function () {
     play.animate([{ transform: 'translate(-50%,-50%) scale(1)' }, { transform: 'translate(-50%,-50%) scale(.88)' }, { transform: 'translate(-50%,-50%) scale(1)' }], { duration: 280 });
+    bananaRain();
   });
 
   /* ---------- ano no rodapé ---------- */
