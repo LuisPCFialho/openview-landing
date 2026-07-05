@@ -175,14 +175,15 @@ main,.nav{position:relative;z-index:2}
   radial-gradient(circle at 50% 42%,rgba(8,10,18,.42),transparent 58%),
   linear-gradient(180deg,rgba(8,10,18,.22),transparent 18%,transparent 80%,rgba(8,10,18,.28))}
 
-/* Easter egg "BananaWare": chuva de bananas ao clicar no play (igual ao ecrã Sobre da app) */
-.banana-rain{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:80}
-.banana-rain b{position:absolute;top:0;line-height:1;will-change:transform;
-  animation:banana-fall linear var(--dur) var(--delay) infinite}
-@keyframes banana-fall{
-  from{transform:translateY(-16vh) rotate(var(--r))}
-  to{transform:translateY(116vh) rotate(var(--r))}
-}
+/* Easter egg "BananaWare": chuva de bananas SÓ dentro do mini-player, ao clicar no play.
+   Cai de cima para baixo do ecrã; algumas rodam devagar (leve), outras ficam inclinadas. */
+.screen .banana-rain{position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:6}
+.screen .banana-rain b{position:absolute;top:-18%;line-height:1;will-change:top,transform;
+  transform:rotate(var(--r0));
+  animation:banana-fall linear var(--dur) var(--delay) infinite,
+            banana-spin linear var(--spin-dur) var(--delay) infinite}
+@keyframes banana-fall{from{top:-18%}to{top:118%}}
+@keyframes banana-spin{from{transform:rotate(var(--r0))}to{transform:rotate(var(--r-end))}}
 .screen-bar{position:relative;display:flex;gap:7px;padding:14px 16px;transform:translateZ(20px)}
 .screen-bar span{width:11px;height:11px;border-radius:50%;background:#2c3140}
 .screen-bar span:first-child{background:#ff5f56}.screen-bar span:nth-child(2){background:#ffbd2e}.screen-bar span:nth-child(3){background:#27c93f}

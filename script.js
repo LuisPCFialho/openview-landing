@@ -183,23 +183,30 @@
 
   /* ---------- play do mockup: bounce + chuva de bananas (easter egg BananaWare) ---------- */
   function bananaRain() {
-    var old = document.getElementById('banana-rain');
+    var screen = document.getElementById('tilt');
+    if (!screen) return;
+    var old = screen.querySelector('.banana-rain');
     if (old) old.remove();
     var layer = document.createElement('div');
-    layer.id = 'banana-rain';
     layer.className = 'banana-rain';
     layer.setAttribute('aria-hidden', 'true');
-    for (var i = 0; i < 40; i++) {
+    for (var i = 0; i < 16; i++) {
       var b = document.createElement('b');
       b.textContent = '🍌';
-      b.style.left = (Math.random() * 96) + 'vw';
-      b.style.fontSize = (24 + Math.random() * 32).toFixed(0) + 'px'; // 24-56px
-      b.style.setProperty('--dur', (2.5 + Math.random() * 2.5).toFixed(2) + 's'); // 2.5-5s
-      b.style.setProperty('--delay', (Math.random() * 2.5).toFixed(2) + 's'); // 0-2.5s
-      b.style.setProperty('--r', (Math.random() * 360).toFixed(0) + 'deg');
+      var r0 = Math.random() * 360;
+      b.style.left = (Math.random() * 88).toFixed(1) + '%';
+      b.style.fontSize = (14 + Math.random() * 16).toFixed(0) + 'px'; // 14-30px
+      b.style.setProperty('--dur', (4 + Math.random() * 4).toFixed(2) + 's'); // 4-8s fall
+      b.style.setProperty('--delay', (Math.random() * 3).toFixed(2) + 's'); // 0-3s
+      b.style.setProperty('--r0', r0.toFixed(0) + 'deg');
+      // ~55% rodam devagar (direção aleatória, leve); as outras ficam com inclinação fixa
+      var spins = Math.random() < 0.55;
+      var end = spins ? r0 + (Math.random() < 0.5 ? 360 : -360) : r0;
+      b.style.setProperty('--r-end', end.toFixed(0) + 'deg');
+      b.style.setProperty('--spin-dur', (6 + Math.random() * 6).toFixed(2) + 's'); // 6-12s (lento)
       layer.appendChild(b);
     }
-    document.body.appendChild(layer);
+    screen.appendChild(layer);
     setTimeout(function () { layer.style.transition = 'opacity .6s ease'; layer.style.opacity = '0'; }, 6000);
     setTimeout(function () { layer.remove(); }, 6700);
   }
