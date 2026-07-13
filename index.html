@@ -6,14 +6,32 @@
   <title>OpenView IPTV — your player for Android TV, phone and Fire TV</title>
   <meta name="description" content="OpenView IPTV: a fast, elegant player for Android TV, phone and Fire TV. Supports M3U and Xtream, EPG guide, recordings, reminders and 10 languages. Bring your own playlist.">
   <meta name="theme-color" content="#0f1115">
+  <meta name="color-scheme" content="dark">
+  <meta name="author" content="OpenView IPTV">
+  <meta name="keywords" content="IPTV player, Android TV, Fire TV, M3U, Xtream Codes, EPG guide, IPTV recordings, IPTV reminders">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <link rel="canonical" href="https://openview-landing.vercel.app/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="OpenView IPTV">
+  <meta property="og:site_name" content="OpenView IPTV">
+  <meta property="og:url" content="https://openview-landing.vercel.app/">
+  <meta property="og:title" content="OpenView IPTV — your IPTV, finally beautiful">
   <meta property="og:description" content="Fast, elegant IPTV player for Android TV, phone and Fire TV. Bring your own playlist (M3U / Xtream).">
-  <meta property="og:image" content="logo.png">
+  <meta property="og:image" content="https://openview-landing.vercel.app/tv-home.jpg">
+  <meta property="og:image:width" content="1100">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="OpenView IPTV running on Android TV">
+  <meta property="og:locale" content="en">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="OpenView IPTV — your IPTV, finally beautiful">
+  <meta name="twitter:description" content="Fast, elegant IPTV player for Android TV, phone and Fire TV. Bring your own playlist (M3U / Xtream).">
+  <meta name="twitter:image" content="https://openview-landing.vercel.app/tv-home.jpg">
 
   <link rel="icon" type="image/png" href="logo.png">
+  <link rel="preload" as="image" href="logo.png" fetchpriority="high">
   <link rel="apple-touch-icon" href="logo.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -37,8 +55,74 @@
     })();
   </script>
   <link rel="stylesheet" href="styles.css">
+
+  <!-- Structured data: helps search engines and rich results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://openview-landing.vercel.app/#website",
+        "url": "https://openview-landing.vercel.app/",
+        "name": "OpenView IPTV",
+        "description": "Fast, elegant IPTV player for Android TV, phone and Fire TV.",
+        "inLanguage": "en"
+      },
+      {
+        "@type": "SoftwareApplication",
+        "name": "OpenView IPTV",
+        "operatingSystem": "Android 8.0+",
+        "applicationCategory": "MultimediaApplication",
+        "url": "https://openview-landing.vercel.app/",
+        "downloadUrl": "https://github.com/LuisPCFialho/openview-releases/releases/latest",
+        "softwareVersion": "latest",
+        "inLanguage": ["en", "pt", "es", "fr", "de", "it", "ru", "ja", "zh", "ar"],
+        "description": "A fast, elegant player for Android TV, phone and Fire TV. Bring your own playlist (M3U or Xtream) and watch with a program guide, recordings and reminders.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is OpenView IPTV free?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. The app is free to download and use. An optional premium unlocks multiple sources at once, recordings, reminders and backup." }
+          },
+          {
+            "@type": "Question",
+            "name": "Does OpenView provide channels or content?",
+            "acceptedAnswer": { "@type": "Answer", "text": "No. OpenView is only a player. You bring your own M3U or Xtream playlist. It does not host or provide any channels or content." }
+          },
+          {
+            "@type": "Question",
+            "name": "Which devices are supported?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Android TV, Fire TV, and Android phones and tablets running Android 8.0 or newer." }
+          },
+          {
+            "@type": "Question",
+            "name": "How do I install it on a TV?",
+            "acceptedAnswer": { "@type": "Answer", "text": "On Android TV or Fire TV, use the Downloader app and paste the download link, or sideload the APK after allowing installation from unknown sources." }
+          },
+          {
+            "@type": "Question",
+            "name": "Which playlist formats are supported?",
+            "acceptedAnswer": { "@type": "Answer", "text": "M3U and M3U8 playlist URLs, as well as Xtream Codes accounts." }
+          },
+          {
+            "@type": "Question",
+            "name": "Is my playlist private?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Your playlist stays on your device. OpenView does not upload or share it." }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#top">Skip to content</a>
+
   <!-- scroll progress -->
   <div class="scroll-progress" aria-hidden="true"></div>
 
@@ -60,9 +144,13 @@
       <img class="logo" src="logo.png" alt="" width="32" height="32">
       <span>OpenView<span class="accent">IPTV</span></span>
     </a>
-    <nav class="nav-links">
+    <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="nav-links" id="nav-links">
       <a href="#features">Features</a>
       <a href="#install">How to install</a>
+      <a href="#faq">FAQ</a>
       <a class="gh" href="https://github.com/LuisPCFialho/openview-releases/releases/latest" target="_blank" rel="noopener">GitHub</a>
     </nav>
   </header>
@@ -71,7 +159,7 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero-copy reveal">
-        <img class="hero-logo" src="logo.png" alt="OpenView IPTV" width="112" height="112">
+        <img class="hero-logo" src="logo.png" alt="OpenView IPTV" width="112" height="112" fetchpriority="high" decoding="async">
         <span class="badge"><span class="dot"></span> <span id="version">The new version is out</span></span>
         <h1>
           Your IPTV on
@@ -111,7 +199,7 @@
 
       <div class="hero-art reveal" aria-hidden="true">
         <div class="screen tilt" id="tilt">
-          <img class="shot" src="tv-home.jpg" alt="OpenView IPTV running on Android TV" width="1100" height="630" loading="lazy" decoding="async">
+          <img class="shot" src="tv-home.jpg" alt="OpenView IPTV running on Android TV" width="1100" height="630" loading="eager" decoding="async">
           <div class="shot-shade"></div>
           <div class="screen-bar">
             <span></span><span></span><span></span>
@@ -187,6 +275,37 @@
       </div>
     </section>
 
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+      <h2 class="reveal">Frequently asked</h2>
+      <div class="faq-list">
+        <details class="faq-item reveal">
+          <summary>Is OpenView IPTV free?</summary>
+          <p>Yes. The app is free to download and use. An optional premium unlocks multiple sources at once, recordings, reminders and backup.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Does OpenView provide channels or content?</summary>
+          <p>No. OpenView is only a player. You bring your own M3U or Xtream playlist — it does not host or provide any channels or content.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Which devices are supported?</summary>
+          <p>Android TV, Fire TV, and Android phones and tablets running Android 8.0 or newer.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>How do I install it on my TV?</summary>
+          <p>On Android TV or Fire TV, use the <em>Downloader</em> app and paste the download link, or sideload the APK after allowing installation from unknown sources.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Which playlist formats are supported?</summary>
+          <p>M3U and M3U8 playlist URLs, and Xtream Codes accounts.</p>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Is my playlist private?</summary>
+          <p>Yes. Your playlist stays on your device — OpenView never uploads or shares it.</p>
+        </details>
+      </div>
+    </section>
+
     <!-- FINAL CTA -->
     <section class="final reveal">
       <div class="final-glow" aria-hidden="true"></div>
@@ -206,6 +325,10 @@
     <p>OpenView IPTV — a player for user-provided content. It does not provide or host any channels.</p>
     <p class="dim">© <span id="year">2026</span> OpenView · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/refund">Refunds</a> · <a href="/disclaimer">Disclaimer</a> · <a href="https://github.com/LuisPCFialho/openview-releases" target="_blank" rel="noopener">GitHub</a></p>
   </footer>
+
+  <button type="button" class="to-top" aria-label="Back to top" hidden>
+    <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 6.6l6.4 6.4-1.4 1.4L12 9.4l-5 5-1.4-1.4z"/></svg>
+  </button>
 
   <script src="script.js"></script>
 </body>

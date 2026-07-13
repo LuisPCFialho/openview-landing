@@ -41,6 +41,47 @@
   document.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  /* ---------- menu móvel (hambúrguer) ---------- */
+  (function () {
+    var toggle = document.querySelector('.nav-toggle');
+    var links = document.getElementById('nav-links');
+    if (!toggle || !links) return;
+    function setOpen(open) {
+      links.classList.toggle('open', open);
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      toggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+    }
+    toggle.addEventListener('click', function (e) {
+      e.stopPropagation();
+      setOpen(!links.classList.contains('open'));
+    });
+    links.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () { setOpen(false); });
+    });
+    document.addEventListener('click', function (e) {
+      if (links.classList.contains('open') && !links.contains(e.target) && !toggle.contains(e.target)) setOpen(false);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') setOpen(false);
+    });
+  })();
+
+  /* ---------- botão voltar ao topo ---------- */
+  (function () {
+    var btn = document.querySelector('.to-top');
+    if (!btn) return;
+    btn.hidden = false;
+    function upd() {
+      var top = document.documentElement.scrollTop || document.body.scrollTop;
+      btn.classList.toggle('show', top > 600);
+    }
+    document.addEventListener('scroll', upd, { passive: true });
+    upd();
+    btn.addEventListener('click', function () {
+      window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
+    });
+  })();
+
   /* ---------- spotlight + brilho dos cards ---------- */
   if (!reduce) {
     var root = document.documentElement;
@@ -221,25 +262,57 @@
   var yr = document.getElementById('year');
   if (yr) yr.textContent = new Date().getFullYear();
 
-  /* ---------- versão + asset via API do GitHub ---------- */
+  /* ---------- versão + asset via API do GitHub (com cache local) ---------- */
   (function () {
     var REPO = 'LuisPCFialho/openview-releases';
     var FALLBACK = 'https://github.com/' + REPO + '/releases/latest/download/OpenViewIPTV.apk';
+    var CACHE_KEY = 'ov_release_v1';
+    var TTL = 3600000; // 1h — evita esgotar o rate-limit (60/h) da API do GitHub
+
+    function fmtSize(bytes) {
+      if (!bytes) return '';
+      var mb = bytes / 1048576;
+      return (mb >= 10 ? Math.round(mb) : mb.toFixed(1)) + ' MB';
+    }
+    function apply(rel) {
+      if (!rel) return;
+      if (rel.tag) {
+        var v = document.getElementById('version');
+        if (v) v.textContent = 'Version ' + rel.tag + ' available';
+      }
+      if (rel.url) {
+        document.querySelectorAll('a.btn-download').forEach(function (a) { a.setAttribute('href', rel.url); });
+      }
+      if (rel.size) {
+        var sub = document.getElementById('dl-sub');
+        if (sub) sub.textContent = 'free · Android TV & phone · ' + rel.size;
+      }
+    }
+
+    // 1) aplica já a partir do cache (se ainda fresco)
+    try {
+      var cached = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
+      if (cached && (Date.now() - cached.at) < TTL) apply(cached);
+    } catch (e) {}
+
+    // 2) atualiza a partir da rede
     fetch('https://api.github.com/repos/' + REPO + '/releases/latest', {
       headers: { 'Accept': 'application/vnd.github+json' }
     })
       .then(function (r) { return r.ok ? r.json() : null; })
       .then(function (rel) {
         if (!rel) return;
-        if (rel.tag_name) {
-          var v = document.getElementById('version');
-          if (v) v.textContent = 'Version ' + rel.tag_name + ' available';
-        }
         var apk = (rel.assets || []).filter(function (a) { return /\.apk$/i.test(a.name); })[0];
-        var url = apk ? apk.browser_download_url : FALLBACK;
-        document.querySelectorAll('a.btn-download').forEach(function (a) { a.setAttribute('href', url); });
+        var data = {
+          tag: rel.tag_name || '',
+          url: apk ? apk.browser_download_url : FALLBACK,
+          size: apk ? fmtSize(apk.size) : '',
+          at: Date.now()
+        };
+        apply(data);
+        try { localStorage.setItem(CACHE_KEY, JSON.stringify(data)); } catch (e) {}
       })
-      .catch(function () { /* fica o link estático */ });
+      .catch(function () { /* fica o link estático + cache */ });
   })();
 
   /* ---------- TV: foco inicial no botão de download (só carregar OK) ---------- */
