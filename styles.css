@@ -185,6 +185,30 @@ main,.nav{position:relative;z-index:2}
   background:var(--card);transition:border-color .2s,transform .2s}
 .btn-ghost:hover{border-color:var(--purple);transform:translateY(-2px)}
 
+/* botão Google Play — superfície escura para o logótipo de 4 cores respirar */
+.btn-play{position:relative;display:inline-flex;align-items:center;gap:13px;
+  padding:16px 28px;border-radius:16px;color:#fff;
+  background:linear-gradient(160deg,#1b1f2a,#14171f);
+  border:1px solid rgba(255,255,255,.16);
+  box-shadow:0 12px 30px rgba(0,0,0,.45);
+  transition:transform .18s ease,border-color .2s,box-shadow .2s}
+.btn-play:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.34);
+  box-shadow:0 18px 42px rgba(0,0,0,.55)}
+.btn-play:active{transform:translateY(1px) scale(.99)}
+.btn-play .gp-logo{flex:none}
+.btn-play .btn-text{display:flex;flex-direction:column;line-height:1.15;text-align:left}
+.btn-play .btn-text small{font-weight:400;opacity:.72;font-size:.68rem;
+  letter-spacing:.08em;text-transform:uppercase}
+.btn-play .btn-text strong{font-family:'Space Grotesk','Inter',sans-serif;
+  font-size:1.15rem;font-weight:600}
+.btn-play.big{padding:20px 36px}
+.btn-play.big .btn-text strong{font-size:1.3rem}
+.btn-play.compact{padding:13px 22px;flex:none}
+.cta-note{margin:14px 0 0;font-size:.9rem}
+.cta-note a{color:var(--dim);border-bottom:1px solid rgba(255,255,255,.2);
+  transition:color .2s,border-color .2s}
+.cta-note a:hover{color:var(--fg);border-color:var(--purple)}
+
 /* mockup com tilt (controlado por JS via vars) */
 .hero-art{display:flex;justify-content:center;perspective:1100px}
 .screen{position:relative;width:min(440px,90%);aspect-ratio:16/10;border-radius:20px;
@@ -246,12 +270,39 @@ main,.nav{position:relative;z-index:2}
 .card.spot::before{content:"";position:absolute;inset:0;opacity:0;transition:opacity .3s;pointer-events:none;
   background:radial-gradient(240px 240px at var(--cx,50%) var(--cy,50%),rgba(91,140,255,.18),transparent 60%)}
 .card.spot:hover::before{opacity:1}
-.card .ic{font-size:1.9rem;margin-bottom:12px;display:inline-block;transition:transform .3s}
-.card:hover .ic{transform:translateY(-3px) scale(1.12) rotate(-4deg)}
+/* ícones: SVG de traço num emblema (nada de emoji — desenham diferente em cada aparelho) */
+.card .ic{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;
+  margin-bottom:14px;border-radius:13px;color:var(--blue);
+  background:linear-gradient(140deg,rgba(91,140,255,.18),rgba(155,107,255,.10));
+  border:1px solid rgba(255,255,255,.10);
+  transition:transform .3s,color .3s,border-color .3s,background .3s}
+.card:hover .ic{transform:translateY(-3px) scale(1.06);color:var(--teal);
+  border-color:rgba(63,208,201,.35);
+  background:linear-gradient(140deg,rgba(63,208,201,.18),rgba(91,140,255,.10))}
 .card h3{font-size:1.2rem;color:var(--fg)}
 .card p{color:var(--body);margin:0;font-size:1rem}
 
 /* ---------- install ---------- */
+/* painel do caminho mais fácil (Play Store), antes dos passos do APK */
+.install-primary{display:flex;align-items:center;gap:20px;flex-wrap:wrap;
+  margin:0 0 26px;padding:24px 26px;border-radius:var(--radius);
+  border:1px solid rgba(91,140,255,.35);
+  background:linear-gradient(140deg,rgba(91,140,255,.14),rgba(155,107,255,.07));
+  -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.install-primary .gp-logo{flex:none}
+.ip-copy{flex:1 1 240px;min-width:0}
+.ip-copy h3{font-size:1.2rem;margin:0 0 .25em;color:var(--fg)}
+.ip-copy p{margin:0;color:var(--body);font-size:1rem}
+.install-or{display:flex;align-items:center;gap:14px;margin:0 0 18px;
+  color:var(--dim);font-size:.95rem}
+.install-or::before,.install-or::after{content:"";height:1px;flex:1;background:var(--line)}
+@media(max-width:620px){
+  .install-primary{flex-direction:column;text-align:center}
+  /* em coluna, o flex-basis passa a ser ALTURA — sem isto abria um vão enorme */
+  .install-primary .ip-copy{flex:0 1 auto}
+  .install-or::before,.install-or::after{display:none}
+  .install-or{justify-content:center;text-align:center}
+}
 .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
 .step{display:flex;gap:16px;padding:24px;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);
   -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);
@@ -272,7 +323,7 @@ main,.nav{position:relative;z-index:2}
   background:radial-gradient(500px 240px at 50% 30%,rgba(123,107,255,.18),transparent 70%)}
 .final h2{font-size:clamp(1.8rem,4vw,2.8rem)}
 .final p{color:var(--body);margin:0 0 28px;font-size:1.1rem}
-.final .btn-download{margin:0 auto}
+.final-cta{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
 
 /* ---------- footer ---------- */
 .footer{margin-top:40px;padding:40px clamp(20px,5vw,64px);border-top:1px solid var(--line);
@@ -387,3 +438,10 @@ main,.nav{position:relative;z-index:2}
 .lite .btn-download:focus,
 .lite .btn-download:focus-visible{outline:3px solid #fff;outline-offset:4px}
 .lite .btn-ghost{display:none}           /* tira a ação secundária para simplificar em TV */
+.lite .cta-note{display:none}            /* idem: notas de versão fora do caminho em TV */
+/* o botão da Play também grande e com foco visível no D-pad (Android TV tem Play Store) */
+.lite .btn-play{padding:22px 40px}
+.lite .btn-play:focus,
+.lite .btn-play:focus-visible{outline:3px solid #fff;outline-offset:4px}
+.lite .install-primary{flex-direction:column;text-align:center}
+.lite .install-primary .ip-copy{flex:0 1 auto}

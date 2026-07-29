@@ -285,7 +285,7 @@
       }
       if (rel.size) {
         var sub = document.getElementById('dl-sub');
-        if (sub) sub.textContent = 'free · Android TV & phone · ' + rel.size;
+        if (sub) sub.textContent = 'Fire TV & sideload · ' + rel.size;
       }
     }
 

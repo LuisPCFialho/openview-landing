@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>OpenView IPTV — your player for Android TV, phone and Fire TV</title>
-  <meta name="description" content="OpenView IPTV: a fast, elegant player for Android TV, phone and Fire TV. Supports M3U and Xtream, EPG guide, recordings, reminders and 10 languages. Bring your own playlist.">
+  <meta name="description" content="OpenView IPTV: a fast, elegant player for Android TV, phone and Fire TV. Now on Google Play. Supports M3U and Xtream, EPG guide, recordings, reminders and 10 languages. Bring your own playlist.">
   <meta name="theme-color" content="#0f1115">
   <meta name="color-scheme" content="dark">
   <meta name="author" content="OpenView IPTV">
-  <meta name="keywords" content="IPTV player, Android TV, Fire TV, M3U, Xtream Codes, EPG guide, IPTV recordings, IPTV reminders">
+  <meta name="keywords" content="IPTV player, Android TV, Fire TV, M3U, Xtream Codes, EPG guide, IPTV recordings, IPTV reminders, Google Play">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <link rel="canonical" href="https://openview-landing.vercel.app/">
 
@@ -72,10 +72,11 @@
       {
         "@type": "SoftwareApplication",
         "name": "OpenView IPTV",
-        "operatingSystem": "Android 8.0+",
+        "operatingSystem": "Android 7.1+",
         "applicationCategory": "MultimediaApplication",
         "url": "https://openview-landing.vercel.app/",
-        "downloadUrl": "https://github.com/LuisPCFialho/openview-releases/releases/latest",
+        "installUrl": "https://play.google.com/store/apps/details?id=com.openview.iptv",
+        "downloadUrl": "https://play.google.com/store/apps/details?id=com.openview.iptv",
         "softwareVersion": "latest",
         "inLanguage": ["en", "pt", "es", "fr", "de", "it", "ru", "ja", "zh", "ar"],
         "description": "A fast, elegant player for Android TV, phone and Fire TV. Bring your own playlist (M3U or Xtream) and watch with a program guide, recordings and reminders.",
@@ -96,13 +97,18 @@
           },
           {
             "@type": "Question",
+            "name": "Is OpenView IPTV on the Google Play Store?",
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. OpenView IPTV is available on Google Play and installs like any other app, with automatic updates. You can also download the APK directly for Fire TV or devices without the Play Store." }
+          },
+          {
+            "@type": "Question",
             "name": "Which devices are supported?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Android TV, Fire TV, and Android phones and tablets running Android 8.0 or newer." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Android TV, Fire TV, and Android phones and tablets running Android 7.1 or newer." }
           },
           {
             "@type": "Question",
             "name": "How do I install it on a TV?",
-            "acceptedAnswer": { "@type": "Answer", "text": "On Android TV or Fire TV, use the Downloader app and paste the download link, or sideload the APK after allowing installation from unknown sources." }
+            "acceptedAnswer": { "@type": "Answer", "text": "On Android TV, install it straight from Google Play. On Fire TV, use the Downloader app and paste the APK link, or sideload it after allowing installation from unknown sources." }
           },
           {
             "@type": "Question",
@@ -151,7 +157,7 @@
       <a href="#features">Features</a>
       <a href="#install">How to install</a>
       <a href="#faq">FAQ</a>
-      <a class="gh" href="https://github.com/LuisPCFialho/openview-releases/releases/latest" target="_blank" rel="noopener">GitHub</a>
+      <a class="gh" href="https://play.google.com/store/apps/details?id=com.openview.iptv" target="_blank" rel="noopener">Google Play</a>
     </nav>
   </header>
 
@@ -160,7 +166,7 @@
     <section class="hero">
       <div class="hero-copy reveal">
         <img class="hero-logo" src="logo.png" alt="OpenView IPTV" width="112" height="112" fetchpriority="high" decoding="async">
-        <span class="badge"><span class="dot"></span> <span id="version">The new version is out</span></span>
+        <span class="badge"><span class="dot"></span> <span id="version">Now on Google Play</span></span>
         <h1>
           Your IPTV on
           <span class="rotator" aria-hidden="true">
@@ -176,6 +182,18 @@
           program guide, recordings and reminders.
         </p>
         <div class="cta">
+          <a class="btn-play magnetic" href="https://play.google.com/store/apps/details?id=com.openview.iptv" target="_blank" rel="noopener">
+            <svg class="gp-logo" viewBox="0 0 512 512" width="28" height="28" aria-hidden="true">
+              <path fill="#00d0ff" d="M47 27c-7 7-11 18-11 32v394c0 14 4 25 11 32l1 1 221-221v-5L47 27z"/>
+              <path fill="#ffc400" d="M342 344l-74-74v-5l74-74 2 1 87 50c25 14 25 37 0 51l-87 50-2 1z"/>
+              <path fill="#ff3a44" d="M344 343l-76-76L47 488c8 9 22 10 37 1l260-146z"/>
+              <path fill="#00e676" d="M344 191L84 45C69 36 55 37 47 46l221 221 76-76z"/>
+            </svg>
+            <span class="btn-text">
+              <small>Get it on</small>
+              <strong>Google Play</strong>
+            </span>
+          </a>
           <a id="download" class="btn-download magnetic" href="https://github.com/LuisPCFialho/openview-releases/releases/latest/download/OpenViewIPTV.apk">
             <span class="bd-shine" aria-hidden="true"></span>
             <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
@@ -183,18 +201,18 @@
             </svg>
             <span class="btn-text">
               <strong>Download APK</strong>
-              <small id="dl-sub">free · Android TV &amp; phone</small>
+              <small id="dl-sub">Fire TV &amp; sideload</small>
             </span>
           </a>
-          <a class="btn-ghost" href="https://github.com/LuisPCFialho/openview-releases/releases/latest" target="_blank" rel="noopener">Release notes</a>
         </div>
+        <p class="cta-note"><a href="https://github.com/LuisPCFialho/openview-releases/releases/latest" target="_blank" rel="noopener">Release notes</a></p>
 
         <div class="stats reveal">
           <div class="stat"><b class="count" data-to="10">0</b><span>languages</span></div>
           <div class="stat"><b class="count" data-to="4">0</b><span>platforms</span></div>
           <div class="stat"><b class="count" data-to="100" data-suffix="%">0</b><span>your playlist</span></div>
         </div>
-        <p class="micro">Android 8.0+ · APK install (outside the Play Store)</p>
+        <p class="micro">Android 7.1+ · on Google Play · APK for Fire TV &amp; sideload</p>
       </div>
 
       <div class="hero-art reveal" aria-hidden="true">
@@ -230,32 +248,59 @@
       <h2 class="reveal">Everything you need, in one player</h2>
       <div class="cards">
         <article class="card spot reveal">
-          <div class="ic">📺</div>
+          <div class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 6h11M3 11h11M3 16h7"/><path d="M16 12.5v7l6-3.5z"/>
+            </svg>
+          </div>
           <h3>M3U &amp; Xtream</h3>
           <p>Add any playlist via M3U URL or Xtream Codes account. Multiple sources at once (premium).</p>
         </article>
         <article class="card spot reveal">
-          <div class="ic">🗓️</div>
+          <div class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="5" width="18" height="16" rx="2.5"/><path d="M3 10h18M8 3v4M16 3v4"/>
+            </svg>
+          </div>
           <h3>EPG guide</h3>
           <p>Full schedule with what's on now and next, organized by channel.</p>
         </article>
         <article class="card spot reveal">
-          <div class="ic">⏺️</div>
+          <div class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="8.5"/><circle cx="12" cy="12" r="3.5" fill="currentColor" stroke="none"/>
+            </svg>
+          </div>
           <h3>Recordings &amp; reminders</h3>
           <p>Record programs and get reminders so you never miss anything (premium).</p>
         </article>
         <article class="card spot reveal">
-          <div class="ic">🌍</div>
+          <div class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="8.5"/>
+              <path d="M3.5 12h17M12 3.5c2.4 2.6 3.6 5.4 3.6 8.5s-1.2 5.9-3.6 8.5c-2.4-2.6-3.6-5.4-3.6-8.5S9.6 6.1 12 3.5z"/>
+            </svg>
+          </div>
           <h3>10 languages</h3>
           <p>Interface in Portuguese, English, Spanish, French, German, Italian, Russian, Japanese, Chinese and Arabic.</p>
         </article>
         <article class="card spot reveal">
-          <div class="ic">📱</div>
+          <div class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2.5" y="4.5" width="13" height="9.5" rx="2"/><path d="M9 14v4.5M6 18.5h6"/>
+              <rect x="17.5" y="9.5" width="4" height="10" rx="1.5"/>
+            </svg>
+          </div>
           <h3>TV, phone &amp; Fire TV</h3>
           <p>Built TV-first — remote navigation — but perfect on the phone too.</p>
         </article>
         <article class="card spot reveal">
-          <div class="ic">💾</div>
+          <div class="ic" aria-hidden="true">
+            <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 3v10m0 0l-3.5-3.5M12 13l3.5-3.5"/>
+              <path d="M3.5 15v3.5a2 2 0 0 0 2 2h13a2 2 0 0 0 2-2V15"/>
+            </svg>
+          </div>
           <h3>Backup &amp; restore</h3>
           <p>Export and import your whole setup in one click whenever you switch devices (premium).</p>
         </article>
@@ -265,13 +310,31 @@
     <!-- INSTALL -->
     <section id="install" class="install">
       <h2 class="reveal">Installing is quick</h2>
+
+      <div class="install-primary reveal">
+        <svg class="gp-logo" viewBox="0 0 512 512" width="34" height="34" aria-hidden="true">
+          <path fill="#00d0ff" d="M47 27c-7 7-11 18-11 32v394c0 14 4 25 11 32l1 1 221-221v-5L47 27z"/>
+          <path fill="#ffc400" d="M342 344l-74-74v-5l74-74 2 1 87 50c25 14 25 37 0 51l-87 50-2 1z"/>
+          <path fill="#ff3a44" d="M344 343l-76-76L47 488c8 9 22 10 37 1l260-146z"/>
+          <path fill="#00e676" d="M344 191L84 45C69 36 55 37 47 46l221 221 76-76z"/>
+        </svg>
+        <div class="ip-copy">
+          <h3>The easy way — Google Play</h3>
+          <p>On a phone, tablet or Android TV, install it like any other app. Updates arrive automatically.</p>
+        </div>
+        <a class="btn-play compact" href="https://play.google.com/store/apps/details?id=com.openview.iptv" target="_blank" rel="noopener">
+          <span class="btn-text"><small>Get it on</small><strong>Google Play</strong></span>
+        </a>
+      </div>
+
+      <p class="install-or reveal">Or install the APK — for Fire TV and devices without the Play Store</p>
       <div class="steps">
         <div class="step reveal"><span class="n">1</span><div><h3>Download the APK</h3><p>Tap the download button. The file lands on your device.</p></div></div>
         <div class="step reveal"><span class="n">2</span><div><h3>Allow installation</h3><p>On your TV/phone, allow "install unknown apps" for your browser or file manager.</p></div></div>
         <div class="step reveal"><span class="n">3</span><div><h3>Open and add your playlist</h3><p>Enter your M3U URL or Xtream account and you're ready to watch.</p></div></div>
       </div>
       <div class="tv-tip reveal">
-        <strong>On Android TV / Fire TV?</strong> Use the <em>Downloader</em> app and paste the download link — it installs straight on the big screen.
+        <strong>On Fire TV?</strong> Use the <em>Downloader</em> app and paste the APK link — it installs straight on the big screen.
       </div>
     </section>
 
@@ -288,12 +351,16 @@
           <p>No. OpenView is only a player. You bring your own M3U or Xtream playlist — it does not host or provide any channels or content.</p>
         </details>
         <details class="faq-item reveal">
+          <summary>Is OpenView IPTV on the Google Play Store?</summary>
+          <p>Yes — you can <a href="https://play.google.com/store/apps/details?id=com.openview.iptv" target="_blank" rel="noopener">install it from Google Play</a> and get automatic updates. The direct APK download stays available for Fire TV and devices without the Play Store.</p>
+        </details>
+        <details class="faq-item reveal">
           <summary>Which devices are supported?</summary>
-          <p>Android TV, Fire TV, and Android phones and tablets running Android 8.0 or newer.</p>
+          <p>Android TV, Fire TV, and Android phones and tablets running Android 7.1 or newer.</p>
         </details>
         <details class="faq-item reveal">
           <summary>How do I install it on my TV?</summary>
-          <p>On Android TV or Fire TV, use the <em>Downloader</em> app and paste the download link, or sideload the APK after allowing installation from unknown sources.</p>
+          <p>On Android TV, install it straight from Google Play. On Fire TV, use the <em>Downloader</em> app and paste the APK link, or sideload it after allowing installation from unknown sources.</p>
         </details>
         <details class="faq-item reveal">
           <summary>Which playlist formats are supported?</summary>
@@ -310,20 +377,31 @@
     <section class="final reveal">
       <div class="final-glow" aria-hidden="true"></div>
       <h2>Ready to start?</h2>
-      <p>Download OpenView IPTV and bring your own playlist.</p>
-      <a class="btn-download big magnetic" href="https://github.com/LuisPCFialho/openview-releases/releases/latest/download/OpenViewIPTV.apk">
-        <span class="bd-shine" aria-hidden="true"></span>
-        <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
-          <path fill="currentColor" d="M12 3v10.6l3.3-3.3 1.4 1.4L12 17.4l-4.7-5.7 1.4-1.4L12 13.6V3h0zM5 19h14v2H5z"/>
-        </svg>
-        <span class="btn-text"><strong>Download APK</strong><small>latest version</small></span>
-      </a>
+      <p>Get OpenView IPTV and bring your own playlist.</p>
+      <div class="final-cta">
+        <a class="btn-play big magnetic" href="https://play.google.com/store/apps/details?id=com.openview.iptv" target="_blank" rel="noopener">
+          <svg class="gp-logo" viewBox="0 0 512 512" width="30" height="30" aria-hidden="true">
+            <path fill="#00d0ff" d="M47 27c-7 7-11 18-11 32v394c0 14 4 25 11 32l1 1 221-221v-5L47 27z"/>
+            <path fill="#ffc400" d="M342 344l-74-74v-5l74-74 2 1 87 50c25 14 25 37 0 51l-87 50-2 1z"/>
+            <path fill="#ff3a44" d="M344 343l-76-76L47 488c8 9 22 10 37 1l260-146z"/>
+            <path fill="#00e676" d="M344 191L84 45C69 36 55 37 47 46l221 221 76-76z"/>
+          </svg>
+          <span class="btn-text"><small>Get it on</small><strong>Google Play</strong></span>
+        </a>
+        <a class="btn-download big magnetic" href="https://github.com/LuisPCFialho/openview-releases/releases/latest/download/OpenViewIPTV.apk">
+          <span class="bd-shine" aria-hidden="true"></span>
+          <svg viewBox="0 0 24 24" width="26" height="26" aria-hidden="true">
+            <path fill="currentColor" d="M12 3v10.6l3.3-3.3 1.4 1.4L12 17.4l-4.7-5.7 1.4-1.4L12 13.6V3h0zM5 19h14v2H5z"/>
+          </svg>
+          <span class="btn-text"><strong>Download APK</strong><small>Fire TV &amp; sideload</small></span>
+        </a>
+      </div>
     </section>
   </main>
 
   <footer class="footer">
     <p>OpenView IPTV — a player for user-provided content. It does not provide or host any channels.</p>
-    <p class="dim">© <span id="year">2026</span> OpenView · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/refund">Refunds</a> · <a href="/disclaimer">Disclaimer</a> · <a href="https://github.com/LuisPCFialho/openview-releases" target="_blank" rel="noopener">GitHub</a></p>
+    <p class="dim">© <span id="year">2026</span> OpenView · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/refund">Refunds</a> · <a href="/disclaimer">Disclaimer</a> · <a href="https://play.google.com/store/apps/details?id=com.openview.iptv" target="_blank" rel="noopener">Google Play</a> · <a href="https://github.com/LuisPCFialho/openview-releases" target="_blank" rel="noopener">GitHub</a></p>
   </footer>
 
   <button type="button" class="to-top" aria-label="Back to top" hidden>
