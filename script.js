@@ -315,6 +315,30 @@
       .catch(function () { /* fica o link estático + cache */ });
   })();
 
+  /* ---------- contagem de visitas (anónima) ---------- */
+  /* Fora da Google Play não há consola nenhuma que diga quanta gente passa por
+     aqui. Isto manda um número aleatório guardado neste browser, nada mais: sem
+     cookies, sem IP guardado, sem serviços de terceiros. O servidor só conta
+     visitantes diferentes por dia. */
+  (function () {
+    var PING = 'https://openview-activation.luispcfialho.workers.dev/visit';
+    var CHAVE = 'ov_vid';
+    try {
+      var vid = localStorage.getItem(CHAVE);
+      if (!vid) {
+        vid = Math.random().toString(36).slice(2) + Math.random().toString(36).slice(2);
+        localStorage.setItem(CHAVE, vid);
+      }
+      var corpo = JSON.stringify({ vid: vid });
+      /* sendBeacon com text/plain evita o pedido OPTIONS e não atrasa a página. */
+      if (navigator.sendBeacon) {
+        navigator.sendBeacon(PING, new Blob([corpo], { type: 'text/plain' }));
+      } else if (window.fetch) {
+        fetch(PING, { method: 'POST', body: corpo, keepalive: true }).catch(function () {});
+      }
+    } catch (e) { /* browser sem localStorage (ou modo privado): não se conta */ }
+  })();
+
   /* ---------- TV: foco inicial no botão de download (só carregar OK) ---------- */
   if (lite) {
     var focusDownload = function () {
