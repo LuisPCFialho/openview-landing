@@ -23,6 +23,21 @@
     .legal .back{display:inline-block;margin-bottom:24px;color:var(--dim)}
     .legal strong{color:var(--fg)}
   </style>
+  <!-- Matomo (self-hosted, no cookies) -->
+  <script>
+    var _paq = window._paq = window._paq || [];
+    _paq.push(['disableCookies']);
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function() {
+      var u="https://analytics.openviewiptv.com/";
+      _paq.push(['setTrackerUrl', u+'matomo.php']);
+      _paq.push(['setSiteId', '3']);
+      var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+      g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+    })();
+  </script>
+  <!-- End Matomo -->
 </head>
 <body>
   <main class="legal">
@@ -81,7 +96,9 @@
       We do not sell or share data, profile users, track viewing habits, or include third-party
       advertising or analytics. The app is designed to work without any account. This website
       counts daily unique visitors using a random number stored in your browser, on our own
-      server - no cookies, no third-party analytics, no IP stored.
+      server. It also uses Matomo, hosted on our own server (not a third-party service), to see
+      which pages are visited and where visitors come from - no cookies, and IP addresses are
+      anonymised before they are stored.
     </p>
 
     <h2>Permissions</h2>
