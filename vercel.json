@@ -13,6 +13,10 @@
       "permanent": false
     }
   ],
+  "rewrites": [
+    { "source": "/estatisticas/script.js", "destination": "https://analytics.openviewiptv.com/matomo.js" },
+    { "source": "/estatisticas/registo", "destination": "https://analytics.openviewiptv.com/matomo.php" }
+  ],
   "headers": [
     {
       "source": "/(.*)",
