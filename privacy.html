@@ -43,7 +43,7 @@
   <main class="legal">
     <a class="back" href="/">← OpenView IPTV</a>
     <h1>Privacy Policy</h1>
-    <p class="eff">Effective date: 26 June 2026</p>
+    <p class="eff">Effective date: 14 October 2026</p>
 
     <p>
       OpenView IPTV (the “app”) is a media <strong>player</strong> for IPTV sources that
@@ -54,8 +54,10 @@
     <h2>The short version</h2>
     <ul>
       <li>We do <strong>not</strong> collect your personal data.</li>
-      <li>We do <strong>not</strong> track what you watch.</li>
+      <li>We do <strong>not</strong> track what you watch: no channel, movie, series or programme names ever leave your device.</li>
       <li>We do <strong>not</strong> show ads or use advertising/analytics SDKs.</li>
+      <li>The app sends <strong>anonymous daily usage totals</strong> to our own server (which sections and
+        features are used), and you can turn this off in Settings.</li>
       <li>Your playlists and credentials stay <strong>on your device</strong>.</li>
       <li>On Google Play, purchases are processed by <strong>Google Play Billing</strong>.</li>
     </ul>
@@ -79,12 +81,18 @@
         <a href="https://www.themoviedb.org/privacy-policy" target="_blank" rel="noopener">TMDB privacy policy</a>.</li>
       <li><strong>Updates (sideload version only):</strong> the GitHub-distributed build checks
         GitHub for the latest version. Store versions update through the store.</li>
-      <li><strong>Usage signal (sideload version only, anonymous):</strong> once a day the
-        GitHub-distributed build tells our own server that it is being used, sending only a
-        one-way device code (the same one used for licences), the distribution channel and the
-        app version. Outside the stores there is no console telling us how many people use the
-        app or which version they are on. No account, no name, no email, no IP stored, nothing
-        about what you watch. Store versions send nothing: the store counts for us.</li>
+      <li><strong>Usage statistics (all versions, anonymous, on by default):</strong> once a day the
+        app tells our own server (a Cloudflare Worker and database, not a third-party analytics
+        service) that it is being used. It sends only the one-way device code used for licences,
+        the distribution channel (Google Play, website), the app version, whether the app is free,
+        on trial or Premium, and daily totals of how many times each part of the app was used, for
+        example "opened the TV Guide 3 times", "played a live channel 5 times" or "tapped a Premium
+        feature without Premium". It never sends channel, movie, series or programme names, playlist
+        addresses, searches, or anything you type. No account, no name, no email, no IP stored. We
+        use these totals only to know how many people use the app and which features matter, so we
+        can improve it. You can turn this off at any time in Settings &gt; Advanced
+        (&ldquo;Usage statistics&rdquo;); when it is off the app sends nothing and deletes the totals
+        it had not sent yet.</li>
       <li><strong>Crash reports (anonymous, on by default):</strong> the app sends anonymous
         diagnostics after a crash — app version, device model, Android version and a stack trace
         with URLs and credentials removed — to help us fix bugs. No personal data is included. This
@@ -93,8 +101,8 @@
 
     <h2>What we never do</h2>
     <p>
-      We do not sell or share data, profile users, track viewing habits, or include third-party
-      advertising or analytics. The app is designed to work without any account. This website
+      We do not sell or share data, profile users, record what you watch, or include third-party
+      advertising or analytics SDKs. The app is designed to work without any account. This website
       counts daily unique visitors using a random number stored in your browser, on our own
       server. It also uses Matomo, hosted on our own server (not a third-party service), to see
       which pages are visited and where visitors come from - no cookies, and IP addresses are
