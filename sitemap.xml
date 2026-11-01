@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://openview-landing.vercel.app/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://openview-landing.vercel.app/privacy</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://openview-landing.vercel.app/terms</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://openview-landing.vercel.app/refund</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
-  <url><loc>https://openview-landing.vercel.app/support</loc><changefreq>yearly</changefreq><priority>0.4</priority></url>
-  <url><loc>https://openview-landing.vercel.app/disclaimer</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
+  <url><loc>https://openviewiptv.com/</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://openviewiptv.com/privacy</loc><lastmod>2026-11-01</lastmod></url>
+  <url><loc>https://openviewiptv.com/terms</loc><lastmod>2026-10-05</lastmod></url>
+  <url><loc>https://openviewiptv.com/refund</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://openviewiptv.com/support</loc><lastmod>2026-10-06</lastmod></url>
+  <url><loc>https://openviewiptv.com/disclaimer</loc><lastmod>2026-10-02</lastmod></url>
 </urlset>

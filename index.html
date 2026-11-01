@@ -3,36 +3,36 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>OpenView IPTV — your player for Android TV, phone and Fire TV</title>
-  <meta name="description" content="OpenView IPTV: a fast, elegant player for Android TV, phone and Fire TV. Now on Google Play. Supports M3U and Xtream, EPG guide, recordings, reminders and 10 languages. Bring your own playlist.">
+  <title>OpenView IPTV: IPTV player for Android TV, phone and Fire TV</title>
+  <meta name="description" content="Fast, elegant IPTV player for Android TV, phone and Fire TV, on Google Play. M3U and Xtream, EPG guide, recordings and reminders. Bring your own playlist.">
   <meta name="theme-color" content="#0f1115">
   <meta name="color-scheme" content="dark">
   <meta name="author" content="OpenView IPTV">
-  <meta name="keywords" content="IPTV player, Android TV, Fire TV, M3U, Xtream Codes, EPG guide, IPTV recordings, IPTV reminders, Google Play">
   <meta name="robots" content="index, follow, max-image-preview:large">
-  <link rel="canonical" href="https://openview-landing.vercel.app/">
+  <link rel="canonical" href="https://openviewiptv.com/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="OpenView IPTV">
-  <meta property="og:url" content="https://openview-landing.vercel.app/">
+  <meta property="og:url" content="https://openviewiptv.com/">
   <meta property="og:title" content="OpenView IPTV — your IPTV, finally beautiful">
   <meta property="og:description" content="Fast, elegant IPTV player for Android TV, phone and Fire TV. Bring your own playlist (M3U / Xtream).">
-  <meta property="og:image" content="https://openview-landing.vercel.app/tv-home.jpg">
+  <meta property="og:image" content="https://openviewiptv.com/tv-home.jpg">
   <meta property="og:image:width" content="1100">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="OpenView IPTV running on Android TV">
-  <meta property="og:locale" content="en">
+  <meta property="og:locale" content="en_US">
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="OpenView IPTV — your IPTV, finally beautiful">
   <meta name="twitter:description" content="Fast, elegant IPTV player for Android TV, phone and Fire TV. Bring your own playlist (M3U / Xtream).">
-  <meta name="twitter:image" content="https://openview-landing.vercel.app/tv-home.jpg">
+  <meta name="twitter:image" content="https://openviewiptv.com/tv-home.jpg">
+  <meta name="twitter:image:alt" content="OpenView IPTV running on Android TV">
 
-  <link rel="icon" type="image/png" href="logo.png">
-  <link rel="preload" as="image" href="logo.png" fetchpriority="high">
-  <link rel="apple-touch-icon" href="logo.png">
+  <link rel="icon" type="image/png" sizes="48x48" href="favicon-48.png">
+  <link rel="preload" as="image" type="image/webp" href="logo.webp" fetchpriority="high">
+  <link rel="apple-touch-icon" href="logo-180.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
@@ -62,28 +62,49 @@
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "Organization",
+        "@id": "https://openviewiptv.com/#organization",
+        "name": "OpenView IPTV",
+        "url": "https://openviewiptv.com/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://openviewiptv.com/logo.png",
+          "width": 416,
+          "height": 416
+        },
+        "sameAs": [
+          "https://play.google.com/store/apps/details?id=com.openview.iptv",
+          "https://github.com/LuisPCFialho/openview-releases"
+        ]
+      },
+      {
         "@type": "WebSite",
-        "@id": "https://openview-landing.vercel.app/#website",
-        "url": "https://openview-landing.vercel.app/",
+        "@id": "https://openviewiptv.com/#website",
+        "url": "https://openviewiptv.com/",
         "name": "OpenView IPTV",
         "description": "Fast, elegant IPTV player for Android TV, phone and Fire TV.",
-        "inLanguage": "en"
+        "inLanguage": "en",
+        "publisher": { "@id": "https://openviewiptv.com/#organization" }
       },
       {
         "@type": "SoftwareApplication",
+        "@id": "https://openviewiptv.com/#app",
         "name": "OpenView IPTV",
         "operatingSystem": "Android 7.1+",
         "applicationCategory": "MultimediaApplication",
-        "url": "https://openview-landing.vercel.app/",
+        "url": "https://openviewiptv.com/",
+        "image": "https://openviewiptv.com/logo.png",
+        "screenshot": "https://openviewiptv.com/tv-home.jpg",
         "installUrl": "https://play.google.com/store/apps/details?id=com.openview.iptv",
         "downloadUrl": "https://play.google.com/store/apps/details?id=com.openview.iptv",
-        "softwareVersion": "latest",
         "inLanguage": ["en", "pt", "es", "fr", "de", "it", "ru", "ja", "zh", "ar"],
         "description": "A fast, elegant player for Android TV, phone and Fire TV. Bring your own playlist (M3U or Xtream) and watch with a program guide, recordings and reminders.",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" }
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "publisher": { "@id": "https://openviewiptv.com/#organization" }
       },
       {
         "@type": "FAQPage",
+        "@id": "https://openviewiptv.com/#faq",
         "mainEntity": [
           {
             "@type": "Question",
@@ -107,18 +128,18 @@
           },
           {
             "@type": "Question",
-            "name": "How do I install it on a TV?",
+            "name": "How do I install it on my TV?",
             "acceptedAnswer": { "@type": "Answer", "text": "On Android TV, install it straight from Google Play. On Fire TV, open the Downloader app and type openviewiptv.com/tv, or sideload the APK after allowing installation from unknown sources." }
           },
           {
             "@type": "Question",
             "name": "Which playlist formats are supported?",
-            "acceptedAnswer": { "@type": "Answer", "text": "M3U and M3U8 playlist URLs, as well as Xtream Codes accounts." }
+            "acceptedAnswer": { "@type": "Answer", "text": "M3U and M3U8 playlist URLs, and Xtream Codes accounts." }
           },
           {
             "@type": "Question",
             "name": "Is my playlist private?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Your playlist stays on your device. OpenView does not upload or share it." }
+            "acceptedAnswer": { "@type": "Answer", "text": "Yes. Your playlist stays on your device. OpenView never uploads or shares it." }
           },
           {
             "@type": "Question",
@@ -172,7 +193,7 @@
 
   <header class="nav">
     <a class="brand" href="#top">
-      <img class="logo" src="logo.png" alt="" width="32" height="32">
+      <img class="logo" src="logo.webp" alt="" width="32" height="32">
       <span>OpenView<span class="accent">IPTV</span></span>
     </a>
     <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
@@ -190,7 +211,7 @@
     <!-- HERO -->
     <section class="hero">
       <div class="hero-copy reveal">
-        <img class="hero-logo" src="logo.png" alt="OpenView IPTV" width="112" height="112" fetchpriority="high" decoding="async">
+        <img class="hero-logo" src="logo.webp" alt="OpenView IPTV" width="112" height="112" fetchpriority="high" decoding="async">
         <span class="badge"><span class="dot"></span> <span id="version">Now on Google Play</span></span>
         <h1>
           Your IPTV on

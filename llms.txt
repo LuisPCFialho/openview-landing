@@ -1,0 +1,20 @@
+# OpenView IPTV
+
+> OpenView IPTV is a media player app for Android TV, Google TV, Fire TV and Android phones and tablets (Android 7.1 or newer). It is only a player: it does not host, provide or sell any channels or content. Users add their own M3U/M3U8 playlist URL or Xtream Codes account.
+
+- Free to download and use. An optional Premium licence unlocks multiple sources at once, recordings, reminders and backup. Lifetime works on up to 5 devices, annual on up to 2.
+- Features: EPG program guide, recordings and reminders (Premium), backup and restore (Premium), interface in 10 languages, TV-first remote navigation.
+- Playlists and credentials stay on the user's device.
+- Install from Google Play. On Fire TV, open the Downloader app and type openviewiptv.com/tv, or sideload the APK.
+- There is no iPhone or App Store version.
+
+## Links
+
+- [Home and FAQ](https://openviewiptv.com/): features, installation and frequently asked questions
+- [Google Play](https://play.google.com/store/apps/details?id=com.openview.iptv): official store listing
+- [Releases](https://github.com/LuisPCFialho/openview-releases/releases/latest): APK downloads and release notes
+- [Support](https://openviewiptv.com/support): contact and what to include
+- [Payment and refund policy](https://openviewiptv.com/refund): what Premium includes, devices, refunds
+- [Terms of service](https://openviewiptv.com/terms)
+- [Privacy policy](https://openviewiptv.com/privacy)
+- [Content disclaimer](https://openviewiptv.com/disclaimer)

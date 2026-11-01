@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
+Disallow: /apk$
+Disallow: /tv$
+Disallow: /estatisticas/
 
-Sitemap: https://openview-landing.vercel.app/sitemap.xml
+Sitemap: https://openviewiptv.com/sitemap.xml
